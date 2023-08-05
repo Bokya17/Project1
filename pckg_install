@@ -1,0 +1,14 @@
+#This is bash script
+#!/bin/bash
+
+#we will add if condition to check if that package exist
+
+read -p "Which package you want to install? " package
+if ! dpkg "$package" -s &> /dev/null:,then
+echo "$package" exist "
+else 
+#if package not exists perform 
+echo "installing package in progress......" 
+apt install "$package" -y
+fi
+ 
